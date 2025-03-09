@@ -10,28 +10,57 @@
 
 		default_layer {
 				// ------------------------------------------------------------------------------------------
-				// | ESC |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |BKSP | DEL |
-				// | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |  |   |
-				// | CAPS  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER    |
-				// |  SHIFT|NONE|  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  | /   | SHFT | UP | 1  |
+				// | ESC |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |BKSP | DEL  |
+				// | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  | ENTER     |
+				// | CAPS  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ñ  |  {  |  {     |	ENTER |
+				// |SHIFT|NONE| Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  | _   | SHFT | UP    | 1   |
 				// |  CTL  |  WIN  |  ALT  |            SPACE              | ALT | CTRL | LEFT | DOWN | RIGHT |
 				// ------------------------------------------------------------------------------------------
 			bindings = <
-				&kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp  N8   &kp  N9 &kp  N0  &kp MINUS &kp EQUAL &kp BSPC &kp DEL
-				&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp  I    &kp  O  &kp  P   &kp LBKT &kp RBKT  &kp BSLH
-				&kp CLCK  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp  K    &kp  L  &kp SEMI &kp SQT           &kp RET
-				&kp LSHFT &none  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH    &kp RSHFT &kp UP   &mo 1
-				&kp LCTRL &kp LGUI &kp LALT            &kp SPACE                          &kp RALT  &kp RCTRL &kp LEFT &kp DOWN &kp RIGHT
+
+				&kp ESC 	&kp N1 				&kp N2 			&kp N3 			&kp N4 		&kp N5 		&kp N6 		&kp N7 	&kp  N8   	&kp  N9 	&kp  N0  		&kp MINUS 		&kp EQUAL 		&kp BSPC
+				&kp TAB  	&kp Q  				&kp W  			&kp E  			&kp R  		&kp T  		&kp Y  		&kp U  	&kp  I    	&kp  O  	&kp  P   		&kp LBKT 		&kp RBKT   		&none
+				&mo 2  		&kp A  				&kp S  			&kp D  			&kp F  		&kp G 		&kp H  		&kp J  	&kp  K    	&kp  L  	&kp SEMI 		&kp SQT   		&kp RBRC  		&kp RET
+				&kp LSHFT  	&kp NON_US_BSLH  &kp Z 		&kp X  			&kp C  			&kp V  		&kp B  		&kp N  		&kp M  	&kp COMMA 	&kp DOT 	&kp FSLH		&kp RSHFT  					&kp UP  		
+				&kp LCTRL 	&kp LGUI 			&kp LALT            				&kp SPACE             							&kp RALT  	&mo 1 			&kp LEFT  		&kp RIGHT		&kp DOWN 
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 		raise {
 			bindings = <
-				&kp GRAVE &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp  F8   &kp  F9 &kp  F10  &kp F11 &kp F12   &trans &trans
-				&trans &trans &kp UP &trans &trans &trans &trans &trans &kp INS &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &sys_reset
-				&trans    &kp LEFT &kp DOWN &kp RIGHT &trans &trans &trans &trans &trans &trans &kp HOME  &kp PG_UP   &bootloader
-				&kp C_PREV &none &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans &trans &trans &trans &trans &trans &trans &kp END &kp PG_DN  &kp C_NEXT &trans
-				&bt BT_PRV &bt BT_NXT  &trans              &trans                            &trans  &trans &rgb_ug RGB_TOG   &bl BL_TOG &bt BT_CLR
+				&kp GRAVE 	&kp F1 				&kp F2 			&kp F3 			&kp F4 		&kp F5 		&kp F6 		&kp F7 	&kp F8 		&kp F9 		&kp F10 		&kp F11 		&kp F12 		&kp DEL
+				&trans 		&kp HOME 			&kp UP 			&kp END 		&kp PG_UP	&trans 		&trans 		&trans 	&trans		&trans 		&kp PSCRN 		&trans	 		&trans		  	&none
+				&mo 2   	&kp LEFT 			&kp DOWN 		&kp RIGHT 		&kp PG_DN	&trans 		&trans 		&trans 	&trans 		&trans 		&trans			&trans	 		&trans 			&kp RET
+				&kp LSHFT  	&kp NON_US_BSLH 		&kp X  			&kp C  			&kp V  		&kp B  		&kp N  		&kp M  	&kp COMMA 	&kp DOT 	&kp FSLH  		&kp RSHFT					&kp UP
+				&kp LCTRL 	&kp LGUI  			&kp LALT            				&kp SPACE                 				           	&trans   	&mo 1  			&trans 			&trans  		&trans 
+			>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		};
+		raise_clone {
+			bindings = <
+				&kp GRAVE 	&kp F1 				&kp F2 			&kp F3 			&kp F4 		&kp F5 		&kp F6 		&kp F7 	&kp F8 		&kp F9 		&kp F10 		&kp F11 		&kp F12 		&kp DEL
+				&trans 		&kp HOME 			&kp UP 			&kp END 		&kp PG_UP	&trans 		&trans 		&trans 	&trans		&trans 		&kp PSCRN 		&trans	 		&trans		  	&none
+				&mo 2   	&kp LEFT 			&kp DOWN 		&kp RIGHT 		&kp PG_DN	&trans 		&trans 		&trans 	&trans 		&trans 		&trans			&trans	 		&trans 			&kp RET
+				&kp LSHFT  	&kp NON_US_BSLH 		&kp X  			&kp C  			&kp V  		&kp B  		&kp N  		&kp M  	&kp COMMA 	&kp DOT 	&kp FSLH  		&kp RSHFT					&kp UP
+				&kp LCTRL 	&kp LGUI  			&kp LALT            				&kp SPACE                 				           	&trans   	&mo 1  			&trans 			&trans  		&trans 
+			>;
+			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+		};
+		setup {
+			bindings = <
+				&kp GRAVE 	&kp F1 				&kp F2 			&kp F3 			&kp F4 		&kp F5 		&kp F6 		&kp F7 	&kp F8 		&kp F9 		&kp F10 		&kp F11 		&kp F12 		&rgb_ug RGB_TOG
+				&trans 		&bt BT_SEL 0			&bt BT_SEL 1  		&bt BT_SEL 2 		&kp PG_UP	&trans 		&trans 		&trans 	&trans		&trans 		&kp PSCRN 		&trans	 		&trans		  	&none
+				&mo 2   	&kp LEFT 			&kp DOWN 		&kp RIGHT 		&kp PG_DN	&trans 		&trans 		&trans 	&trans 		&trans 		&trans			&trans	 		&trans 			&kp RET
+				&kp LSHFT  	&kp C_VOL_DN 			&kp C_VOL_UP		&kp C_MUTE   		&kp V  		&bt BT_PRV  	&kp N  		&kp M  	&kp COMMA 	&kp DOT 	&kp FSLH  		&kp RSHFT					&bl BL_INC 
+				&kp LCTRL 	&kp LGUI  			&kp LALT            				&kp SPACE                 				           	&trans   	&mo 1  			&trans 			&trans  		&bl BL_DEC
+
+
+
+				&trans 		&bt BT_SEL 0 		&bt BT_SEL 1 	&bt BT_SEL 2 	&kp F4 		&kp F5 		&kp F6 		&kp F7 	&kp F8 		&kp F9 		&kp F10 		&kp F11 		&kp F12 			&kp DEL
+				&trans 		&trans 				&kp UP 			&trans 			&reset 		&trans 		&trans 		&trans 	&kp INS 	&trans 		&kp PSCRN 		&kp SLCK 		&kp PAUSE_BREAK 	&rgb_ug RGB_TOG
+				&trans   	&kp LEFT 			&kp DOWN 		&kp RIGHT 		&bootloader &trans 		&trans 		&trans 	&trans 		&trans 		&trans			&kp HOME  		&kp PG_UP   	
+				&kp LSHFT 	&kp C_VOL_DN 		&kp C_VOL_UP 	&kp C_MUTE 		&bt BT_PRV 	&bt BT_CLR 	&bt BT_NXT 	&trans 	&trans 		&kp END 	&kp PG_DN  		&trans			&bl BL_INC 	
+				&bt BT_PRV 	&bt BT_NXT  		&trans              &trans                            	&trans   	&trans  &trans 		&trans 		&bl BL_DEC
 			>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
